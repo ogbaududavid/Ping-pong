@@ -4,9 +4,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 
 public class PingPongGame extends JPanel implements ActionListener {
-    //Fields
+    // Fields
     private int paddlePosition; 
     private int ballX, ballY; 
     private double ballSpeedX, ballSpeedY; 
@@ -136,6 +137,23 @@ public class PingPongGame extends JPanel implements ActionListener {
         if (playerName == null || playerName.trim().isEmpty()) {
             playerName = "Player"; // Default name if none entered
         }
+
+        // ASCII Art Welcome Message
+        // ASCII Art Welcome Message
+       // ASCII Art for "GO!"
+        ArrayList<String> welcomeMessage = new ArrayList<>();
+        welcomeMessage.add("  ____   ___   ");
+        welcomeMessage.add(" / ___| / _ \\  ");
+        welcomeMessage.add("| |  _ | | | | ");
+        welcomeMessage.add("| |_| || |_| | ");
+        welcomeMessage.add(" \\____| \\___/  ");
+        welcomeMessage.add("               ! ");
+
+        // Print the welcome message
+        for (String line : welcomeMessage) {
+            System.out.println(line);
+        }
+        System.out.println( playerName );
 
         JFrame frame = new JFrame("Ping Pong Game"); // Create the main window
         PingPongGame game = new PingPongGame(playerName); // Create a new game instance
